@@ -12,10 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 // database settings
 public abstract class ItemDataBase extends RoomDatabase {
     private static volatile ItemDataBase instance;
-
     public abstract ItemDao itemDao();
-
-
     public static synchronized ItemDataBase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
@@ -43,6 +40,7 @@ public abstract class ItemDataBase extends RoomDatabase {
         }
 
         protected Void doInBackground(Void... voids) {
+            // initial data
 //            itemDao.insert(new Item("1", "2", "3", "4", 5));
             return null;
         }

@@ -27,5 +27,6 @@ public interface ItemDao {
     // get all items
     @Query("SELECT * FROM ItemTable ORDER BY date DESC")
     // if item_table have any change, display automatically
-    LiveData<List<Item>> getAllItemsbyDate();
+//    LiveData<List<Item>> getAllItemsbyDate();
+    LiveData<List<Item>> getAllItems();
 }
