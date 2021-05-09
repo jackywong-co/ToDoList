@@ -1,4 +1,4 @@
-package com.example.todolist.roomdb;
+package com.example.todolist.RoomDataBase;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -9,11 +9,11 @@ import androidx.room.Update;
 
 import java.util.List;
 
+// sql
 @Dao
 public interface ItemDao {
     @Insert
     void insert(Item item);
-
     @Update
     void update(Item item);
 

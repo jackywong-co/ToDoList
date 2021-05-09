@@ -1,10 +1,12 @@
-package com.example.todolist.roomdb;
+package com.example.todolist.RoomDataBase;
 
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+
+// ORM create database
 @Entity(tableName = "ItemTable")
 public class Item {
     @PrimaryKey(autoGenerate = true)
