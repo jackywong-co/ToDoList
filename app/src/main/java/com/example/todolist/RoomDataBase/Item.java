@@ -7,76 +7,86 @@ import androidx.room.PrimaryKey;
 
 
 // ORM create database
-@Entity(tableName = "ItemTable")
+@Entity(tableName = "item_table")
 public class Item {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    private int Id;
+    private int id;
     @ColumnInfo(name = "TaskName")
-    private String TaskName;
+    private String taskName;
     @ColumnInfo(name = "CreatedAt")
-    private String CreateAt;
+    private String createdAt;
+    @ColumnInfo(name = "CreatedOn")
+    private String createdOn;
     @ColumnInfo(name = "Date")
-    private String Date;
-    @ColumnInfo(name = "Status")
-    private String Status;
+    private String date;
     @ColumnInfo(name = "Priority")
-    private int Priority;
+    private int priority;
+    @ColumnInfo(name = "Status")
+    private String status;
 
-
-    public Item(String taskName, String createAt, String date, String status, int priority) {
-        this.TaskName = taskName;
-        this.CreateAt = createAt;
-        this.Date = date;
-        this.Status = status;
-        this.Priority = priority;
+    public Item(String taskName, String createdAt, String createdOn, String date, int priority, String status) {
+        this.taskName = taskName;
+        this.createdAt = createdAt;
+        this.createdOn = createdOn;
+        this.date = date;
+        this.priority = priority;
+        this.status = status;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTaskName() {
-        return TaskName;
+        return taskName;
     }
 
     public void setTaskName(String taskName) {
-        TaskName = taskName;
+        this.taskName = taskName;
     }
 
-    public String getCreateAt() {
-        return CreateAt;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateAt(String createAt) {
-        CreateAt = createAt;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(String createdOn) {
+        this.createdOn = createdOn;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
-    }
-
-    public String getStatus() {
-        return Status;
-    }
-
-    public void setStatus(String status) {
-        Status = status;
+        this.date = date;
     }
 
     public int getPriority() {
-        return Priority;
+        return priority;
     }
 
     public void setPriority(int priority) {
-        Priority = priority;
+        this.priority = priority;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

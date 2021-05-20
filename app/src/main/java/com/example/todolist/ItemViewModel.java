@@ -11,16 +11,22 @@ import com.example.todolist.RoomDataBase.Item;
 import java.util.List;
 
 
-
 // get database data through ViewModel
 public class ItemViewModel extends AndroidViewModel {
     private ItemRepository itemRepository;
-    private LiveData<List<Item>> allItems;
+    private LiveData<List<Item>> allItemsByPriorityDesc;
+    private LiveData<List<Item>> allItemsByCreateDateDesc;
+    private LiveData<List<Item>> allItemsBySetDateDesc;
+    private LiveData<List<Item>> allItemsInHistory;
+
 
     public ItemViewModel(@NonNull Application application) {
         super(application);
         itemRepository = new ItemRepository(application);
-        allItems = itemRepository.getAllItems();
+        allItemsByPriorityDesc = itemRepository.getAllItemsByPriorityDesc();
+        allItemsByCreateDateDesc = itemRepository.getAllItemsByCreateDateDesc();
+        allItemsBySetDateDesc = itemRepository.getAllItemsBySetDateDesc();
+        allItemsInHistory = itemRepository.getAllItemsInHistory();
     }
 
     public void insert(Item item) {
@@ -31,6 +37,10 @@ public class ItemViewModel extends AndroidViewModel {
         itemRepository.update(item);
     }
 
+    public void updateStatus(int id, String status) {
+        itemRepository.updateStatus(id, status);
+    }
+
     public void delete(Item item) {
         itemRepository.delete(item);
     }
@@ -39,8 +49,20 @@ public class ItemViewModel extends AndroidViewModel {
         itemRepository.deleteAllItems();
     }
 
-    public LiveData<List<Item>> getAllItems() {
-        return allItems;
+    public LiveData<List<Item>> getAllItemsInHistory() {
+        return allItemsInHistory;
+    }
+
+    public LiveData<List<Item>> getAllItemsByPriorityDesc() {
+        return allItemsByPriorityDesc;
+    }
+
+    public LiveData<List<Item>> getAllItemsByCreateDateDesc() {
+        return allItemsByCreateDateDesc;
+    }
+
+    public LiveData<List<Item>> getAllItemsBySetDateDesc() {
+        return allItemsBySetDateDesc;
     }
 
 }

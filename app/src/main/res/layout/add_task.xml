@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:padding="26dp"
+    tools:context=".AddTaskActivity">
+
+    <TextView
+        android:id="@+id/EditText_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:hint=""
+        android:inputType="none"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/EditText_TaskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:hint="@string/taskname" />
+
+    <Spinner
+        android:id="@+id/Spinner_Priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:entries="@array/choices"
+        android:prompt="@string/priority"
+        android:spinnerMode="dialog" />
+
+
+    <Button
+        android:id="@+id/Button_AddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add" />
+
+
+</LinearLayout>
